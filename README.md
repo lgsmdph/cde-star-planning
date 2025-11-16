@@ -7,19 +7,25 @@
 ```shell
 $ ./mvnw clean install
 ...
-[INFO] ext_cbs ............................................ SUCCESS [  1.737 s]
-[INFO] ext_cbs_api ........................................ SUCCESS [  1.905 s]
-[INFO] cde-star-planning .................................. SUCCESS [  0.007 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for cde-star-planning 1.0.0:
+[INFO] 
+[INFO] cde-star-planning .................................. SUCCESS [  0.276 s]
+[INFO] ext_cbs ............................................ SUCCESS [  1.704 s]
+[INFO] ext_cbs_api ........................................ SUCCESS [  0.439 s]
+[INFO] ext_cbs_ui ......................................... SUCCESS [  0.349 s]
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-...
+[INFO] Total time:  3.025 s
+[INFO] Finished at: 2025-11-16T17:19:34+07:00
+[INFO] ------------------------------------------------------------------------
 ```
 
 ## 3. Bulk Open Account
 
 ### 3.1 UI
-#### 3.1.1 Running Spring Boot
+### 3.1.1 Running Spring Boot
 ```shell
 $ ./mvnw -f ext_cbs_ui/pom.xml spring-boot:run
 
@@ -42,11 +48,11 @@ $ ./mvnw -f ext_cbs_ui/pom.xml spring-boot:run
 2025-11-16 10:20:33.174  INFO 28740 --- [           main] id.dph.cde.ExtCbsUiApplication           : Started ExtCbsUiApplication in 1.284 seconds (JVM running for 1.592)
 ```
 
-#### 3.1.2 Web Browser
-![browser.png](browser.png)
+### 3.1.2 Web Page
+![webpage.png](webpage.png)
 
 ### 3.2 API
-#### 3.2.1 Running Spring Boot
+### 3.2.1 Running Spring Boot
 ```shell
 $ ./mvnw -f ext_cbs_api/pom.xml spring-boot:run
 
@@ -68,5 +74,5 @@ $ ./mvnw -f ext_cbs_api/pom.xml spring-boot:run
 2025-11-15 22:14:54.507  INFO 29968 --- [           main] c.f.rencana.api.ExtCbsApiApplication     : Started ExtCbsApiApplication in 1.276 seconds (JVM running for 1.581)
 ```
 
-#### 3.2.2 Postman
-![postman.png](postman.png)
+### 3.2.2 Postman
+![postman.png](postman-api.png)
