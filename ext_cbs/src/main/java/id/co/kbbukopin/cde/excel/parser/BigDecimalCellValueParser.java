@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import org.apache.poi.ss.usermodel.Cell;
 
-public class BigDecimalCellValue implements ICellValueParser {
+public class BigDecimalCellValueParser implements ICellValueParser {
 
 	@Override
 	public Object parse(Cell cell) {

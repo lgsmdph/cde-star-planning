@@ -12,7 +12,7 @@ import java.util.List;
 public class RDAccountServiceImpl implements RDAccountService {
 
     @Override
-    public List<RDOpenAccountExcelModel> bulkOpenRDAccount(MultipartFile multipartFile) {
+    public List<RDOpenAccountExcelModel> bulkOpenAccount(MultipartFile multipartFile) {
         RDOpenAccountExcelReaderService excelReaderService = new RDOpenAccountExcelReaderService();
         try (InputStream is = multipartFile.getInputStream()) {
             return excelReaderService.readExcel(is);

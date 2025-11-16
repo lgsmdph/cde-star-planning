@@ -15,7 +15,7 @@ public class RDAccountServiceImpl implements RDAccountService {
     private List<RDOpenAccountExcelModel> lastUploadedData = new ArrayList<>();
 
     @Override
-    public List<RDOpenAccountExcelModel> bulkOpenRDAccount(MultipartFile multipartFile) {
+    public List<RDOpenAccountExcelModel> bulkOpenAccount(MultipartFile multipartFile) {
         RDOpenAccountExcelReaderService excelReaderService = new RDOpenAccountExcelReaderService();
         try (InputStream is = multipartFile.getInputStream()) {
             lastUploadedData =  excelReaderService.readExcel(is);

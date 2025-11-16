@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 
 @RestController
-@RequestMapping("/v1/cde/accounts/rencana")
+@RequestMapping("/v1/cde/rencana/accounts")
 public class RDAccountController {
 
     private final RDAccountService rdAccountService;
@@ -25,9 +25,9 @@ public class RDAccountController {
             value = "/bulk-open",
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<RDOpenAccountExcelModel>> bulkOpenRDAccount(
+    public ResponseEntity<List<RDOpenAccountExcelModel>> bulkOpenAccount(
             @RequestParam MultipartFile file) {
-        List<RDOpenAccountExcelModel> list = rdAccountService.bulkOpenRDAccount(file);
+        List<RDOpenAccountExcelModel> list = rdAccountService.bulkOpenAccount(file);
         return ResponseEntity.ok(list);
     }
 }

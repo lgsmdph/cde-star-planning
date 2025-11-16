@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 
 @Controller
@@ -31,14 +32,14 @@ public class RDAccountController {
 
     @PostMapping("/upload")
     public String upload(@RequestParam MultipartFile file, Model model) {
-        rdAccountService.bulkOpenRDAccount(file);
+        rdAccountService.bulkOpenAccount(file);
         model.addAttribute("data", rdAccountService.getLastUploadedData());
         model.addAttribute("message", "Successfully uploaded!");
         return "/cde/rencana/accounts/bulk-open";
     }
 
-//    @GetMapping("/download")
-//    public void download(HttpServletResponse response) {
-//
-//    }
+    @GetMapping("/download")
+    public void download(HttpServletResponse response) {
+
+    }
 }

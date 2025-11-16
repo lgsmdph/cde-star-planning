@@ -4,7 +4,7 @@ import org.apache.poi.ss.usermodel.Cell;
 
 import java.util.Optional;
 
-public class IntegerCellValue implements ICellValueParser {
+public class IntegerCellValueParser implements ICellValueParser {
 
 	@Override
 	public Object parse(Cell cell) {

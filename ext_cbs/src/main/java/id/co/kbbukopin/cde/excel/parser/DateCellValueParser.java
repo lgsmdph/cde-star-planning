@@ -6,16 +6,20 @@ import java.util.Optional;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DateUtil;
 
-public class DateCellValue implements ICellValueParser {
+public class DateCellValueParser implements ICellValueParser {
 
-	private final SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");
-	
-	@Override
+    private final String pattern;
+
+    public DateCellValueParser(String pattern) {
+        this.pattern = pattern;
+    }
+
+    @Override
 	public Object parse(Cell cell) {
 		return Optional.ofNullable(cell)
 				.flatMap(c -> {
 					if (DateUtil.isCellDateFormatted(c)) {
-						return Optional.of(df.format(c.getDateCellValue()));
+						return Optional.of(new SimpleDateFormat(pattern).format(c.getDateCellValue()));
 					}
 					return Optional.empty();
 				})

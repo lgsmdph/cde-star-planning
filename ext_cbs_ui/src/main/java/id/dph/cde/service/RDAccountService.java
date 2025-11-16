@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface RDAccountService {
 
-    List<RDOpenAccountExcelModel> bulkOpenRDAccount(MultipartFile multipartFile);
+    List<RDOpenAccountExcelModel> bulkOpenAccount(MultipartFile multipartFile);
 
     List<RDOpenAccountExcelModel> getLastUploadedData();
 }
