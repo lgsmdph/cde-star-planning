@@ -79,11 +79,11 @@
     <div th:if="${message}" class="alert alert-success" th:text="${message}"></div>
 
     <!-- Download Button -->
-<!--    <div th:if="${data}">-->
-<!--        <a th:href="@{/cde/rencana/accounts/bulk-open/download}" class="btn btn-success mb-3">-->
-<!--            ⬇ Download Excel-->
-<!--        </a>-->
-<!--    </div>-->
+    <div th:if="${data}">
+        <a th:href="@{/cde/rencana/accounts/bulk-open/download}" class="btn btn-success mb-3">
+            ⬇ Download Excel
+        </a>
+    </div>
 
     <!-- Table -->
     <table id="resultTable" class="table table-bordered" th:if="${data}">

@@ -2,10 +2,12 @@ package id.dph.cde.service;
 
 import id.co.kbbukopin.cde.rencana.model.RDOpenAccountExcelModel;
 import id.co.kbbukopin.cde.rencana.service.RDOpenAccountExcelReaderService;
+import id.co.kbbukopin.cde.rencana.service.RDOpenAccountWriteExcelService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +28,18 @@ public class RDAccountServiceImpl implements RDAccountService {
     }
 
     @Override
+    public void removeLastUploadedData() {
+        lastUploadedData = new ArrayList<>();
+    }
+
+    @Override
     public List<RDOpenAccountExcelModel> getLastUploadedData() {
         return lastUploadedData;
+    }
+
+    @Override
+    public void download(OutputStream os) {
+        RDOpenAccountWriteExcelService writeExcelService = new RDOpenAccountWriteExcelService();
+        writeExcelService.writeExcel(lastUploadedData, os);
     }
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.ArrayList;
 
 @Controller
@@ -26,6 +27,7 @@ public class RDAccountController {
 
     @GetMapping
     public String index(Model model) {
+        rdAccountService.removeLastUploadedData();
         model.addAttribute("data", new ArrayList<>());
         return "/cde/rencana/accounts/bulk-open";
     }
@@ -39,7 +41,8 @@ public class RDAccountController {
     }
 
     @GetMapping("/download")
-    public void download(HttpServletResponse response) {
-
+    public void download(HttpServletResponse response) throws IOException {
+        response.setHeader("Content-Disposition", "attachment; filename=RDOpenAccount.xlsx");
+        rdAccountService.download(response.getOutputStream());
     }
 }
