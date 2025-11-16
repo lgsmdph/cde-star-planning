@@ -1,4 +1,4 @@
-# CDE Star Planning - Bulk Open Account
+# CDE Star Planning - Bulk Open Account (Upload & Download Excel File)
 
 ## 1. Excel File
 [RDOpenAccount.xlsx](RDOpenAccount.xlsx)
